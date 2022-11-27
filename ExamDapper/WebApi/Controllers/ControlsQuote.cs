@@ -33,16 +33,22 @@ namespace Web.Controllers
         }
 
         [HttpDelete]
-        public int  DeleteQuotes(int id)
+        public int DeleteQuotes(int id)
         {
-            return _quoteService. DeleteQuotes(id);
+            return _quoteService.DeleteQuotes(id);
+        }
+
+        [HttpGet("Byid")]
+        public List<Quote> GetById(int id)
+        {
+            return _quoteService.GetById(id);
         }
 
 
-    public List<Quote> GetRandom()
+        [HttpGet("Random")]
+        public List<Quote> GetRandom()
         {
             return _quoteService.GetRandomQuotes();
-            
         }
-}
+    }
 }
